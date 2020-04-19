@@ -138,16 +138,16 @@ for col in transformed_df.columns:
 X = transformed_df.drop('Price', axis=1)
 y = transformed_df.Price
 
-# Scaling
-scaler = StandardScaler()
-X = pd.DataFrame(scaler.fit_transform(X), columns=list(X.columns))
-transformed_df.shape
-
-
 # In[19]:
 
-
 X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=123)
+
+# Scaling
+scaler = StandardScaler()
+X_train = pd.DataFrame(scaler.fit_transform(X_train), columns=list(X.columns))
+X_test = pd.DataFrame(scaler.transform(X_test), columns=list(X.columns))
+pickle.dump({"var": scaler.var_, "mean": scaler.mean_}, open('X_train_normalizer.pickle', 'wb'))
+transformed_df.shape
 
 
 # In[30]:
