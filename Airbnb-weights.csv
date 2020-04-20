@@ -1,51 +1,51 @@
 ,weight
-RefinedPropertyType_Guesthouse,0.0011565487
-Bed_Type_Airbed,0.0012138328
-Bed_Type_Couch,0.0014505818
-Bed_Type_Futon,0.0015078671
-Bed_Type_Pull-out Sofa,0.0015977471
-Cancellation_Policy_moderate,0.0016139952
-RefinedPropertyType_Townhouse,0.0016198892
-hasFirstAidKit,0.0016278122
-hasPetsAllowed,0.0017191223
-has24CheckIn,0.0018806079
-hasWirelessInternet,0.0019877693
-hasIdentityVerified,0.001992448
-hasCarbonMonoxideDetector,0.0019983375
-hasHeating,0.0021113786
-Cancellation_Policy_flexible,0.0021659622
-hasEssentials,0.0022012768
-hasShampoo,0.0022719419
-Beds,0.002317482
-hasIron,0.0023700886
-hasHangers,0.0023733955
-hasFireExtinguisher,0.0023776132
-hasSmokeDetector,0.0024294874
-hasHairDryer,0.0024609664
-hasFamilyFriendly,0.0025065579
-hasLaptopFriendly,0.0025749295
-RefinedPropertyType_Other,0.0025911415
-Number_of_Reviews,0.0027584175
-hasHotTub,0.002816246
-hasInternet,0.0029140725
-hasIntercom,0.0032388454
-hasKitchen,0.0032776003
-RefinedPropertyType_House,0.0036054882
-hasWasher,0.0039798934
-Bed_Type_Real Bed,0.0048874207
-RefinedPropertyType_Apartment,0.0054372954
-Cancellation_Policy_strict,0.0056823934
-RefinedPropertyType_Loft,0.0057911635
-RefinedPropertyType_Bed & Breakfast,0.0071212463
-hasCableTV,0.007776957
-Longitude,0.0117832115
-hasDryer,0.013338018
-hasTV,0.013991882
-Room_Type_Shared room,0.017969733
-Latitude,0.018301899
-Room_Type_Private room,0.03497308
-Bathrooms,0.04002943
-hasAirConditioning,0.056204032
-Bedrooms,0.06519955
-Accommodates,0.07167231
-Room_Type_Entire home/apt,0.54513097
+RefinedPropertyType_Guesthouse,0.0013141802
+Bed_Type_Airbed,0.0013616225
+Bed_Type_Couch,0.0014866048
+Bed_Type_Futon,0.0016538
+RefinedPropertyType_Townhouse,0.0016660015
+Cancellation_Policy_moderate,0.0016852171
+Bed_Type_Pull-out Sofa,0.001701344
+hasFirstAidKit,0.0017453466
+hasPetsAllowed,0.0017932868
+hasWirelessInternet,0.0020228834
+has24CheckIn,0.0020935177
+hasIdentityVerified,0.0021250374
+Cancellation_Policy_flexible,0.002147236
+hasCarbonMonoxideDetector,0.002228678
+hasEssentials,0.00222914
+hasHeating,0.0022319772
+hasIron,0.0022509897
+hasSmokeDetector,0.002415502
+Beds,0.0025175672
+hasShampoo,0.002521805
+hasLaptopFriendly,0.0025423355
+hasHangers,0.0025518362
+hasHairDryer,0.0026106818
+hasFireExtinguisher,0.0026469338
+hasFamilyFriendly,0.0026670166
+RefinedPropertyType_Other,0.002869323
+Number_of_Reviews,0.002955141
+hasHotTub,0.0030057523
+hasIntercom,0.0032763674
+hasKitchen,0.0035013787
+hasInternet,0.0035174969
+RefinedPropertyType_House,0.0039620353
+hasWasher,0.00430524
+Bed_Type_Real Bed,0.0053306236
+RefinedPropertyType_Apartment,0.005840673
+Cancellation_Policy_strict,0.005922947
+RefinedPropertyType_Loft,0.0060941745
+RefinedPropertyType_Bed & Breakfast,0.00797865
+hasCableTV,0.008156223
+Longitude,0.0124735115
+hasTV,0.013529919
+hasDryer,0.014913441
+Latitude,0.019065326
+Room_Type_Shared room,0.019739201
+Room_Type_Private room,0.0341331
+Bathrooms,0.04305155
+hasAirConditioning,0.05784849
+Bedrooms,0.06943069
+Accommodates,0.07853025
+Room_Type_Entire home/apt,0.518358
