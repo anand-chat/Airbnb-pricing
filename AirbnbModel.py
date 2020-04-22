@@ -1,3 +1,9 @@
+#!/usr/bin/env python
+# coding: utf-8
+
+# In[74]:
+
+
 import pandas as pd
 import numpy as np
 from numpy.random import seed
@@ -11,7 +17,7 @@ import time
 from keras import models, layers
 
 
-# In[52]:
+# In[75]:
 
 
 raw_df = pd.read_csv('UpdatedFinalData.csv')
@@ -21,7 +27,7 @@ pd.set_option('display.max_rows', 100)
 raw_df.head(3)
 
 
-# In[53]:
+# In[76]:
 
 
 
@@ -38,14 +44,14 @@ cols_to_drop = ['Zipcode','Name', 'AirbnbExperiences', 'AirbnbHostResponse', 'Ho
 df = raw_df.drop(cols_to_drop, axis=1)
 
 
-# In[54]:
+# In[77]:
 
 
 df.isna().sum()
 df.set_index('ID', inplace=True)
 
 
-# In[55]:
+# In[78]:
 
 
 # Replacing columns with f/t with 0/1
@@ -55,7 +61,7 @@ df.replace({'f': 0, 't': 1}, inplace=True)
 df.hist(figsize=(20,20));
 
 
-# In[56]:
+# In[79]:
 
 
 
@@ -63,21 +69,21 @@ df.hist(figsize=(20,20));
 # df.Zipcode.value_counts(normalize=True)
 
 
-# In[57]:
+# In[80]:
 
 
 df.columns = [c.replace(' ', '_') for c in df.columns]
 df.RefinedPropertyType.value_counts()
 
 
-# In[58]:
+# In[81]:
 
 
 for col in ['Bathrooms', 'Bedrooms', 'Beds']:
     df[col].fillna(df[col].median(), inplace=True)
 
 
-# In[59]:
+# In[82]:
 
 
 
@@ -87,13 +93,13 @@ for col in ['Bathrooms', 'Bedrooms', 'Beds']:
 df.dropna(subset=['Price'], inplace=True)
 
 
-# In[60]:
+# In[83]:
 
 
 df.Cancellation_Policy.value_counts()
 
 
-# In[61]:
+# In[84]:
 
 
 df.Cancellation_Policy.replace({
@@ -102,13 +108,13 @@ df.Cancellation_Policy.replace({
     }, inplace=True)
 
 
-# In[62]:
+# In[85]:
 
 
 df.Price.isna().sum()
 
 
-# In[63]:
+# In[86]:
 
 
 transformed_df = pd.get_dummies(df)
@@ -120,7 +126,7 @@ transformed_df = pd.get_dummies(df)
 
 
 
-# In[64]:
+# In[87]:
 
 
 
@@ -131,7 +137,7 @@ for col in numerical_columns:
     transformed_df[col] = np.log(transformed_df[col])
 
 
-# In[65]:
+# In[88]:
 
 
 # Separating X and y
@@ -139,18 +145,18 @@ X = transformed_df.drop('Price', axis=1)
 y = transformed_df.Price
 
 # Scaling
-scaler = StandardScaler()
-X = pd.DataFrame(scaler.fit_transform(X), columns=list(X.columns))
+# scaler = StandardScaler()
+# X = pd.DataFrame(scaler.fit_transform(X), columns=list(X.columns))
 transformed_df.shape
 
 
-# In[66]:
+# In[89]:
 
 
 X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=123)
 
 
-# In[67]:
+# In[90]:
 
 
 xgb_reg_start = time.time()
@@ -200,7 +206,7 @@ filename = 'Airbnb_model.sav'
 pickle.dump(xgb_reg, open(filename, 'wb'))
 
 
-# In[68]:
+# In[91]:
 
 
 ft_weights_xgb_reg = pd.DataFrame(xgb_reg.feature_importances_, columns=['weight'], index=X_train.columns)
@@ -209,7 +215,7 @@ ft_weights_xgb_reg.to_csv('Airbnb-weights.csv', header=True)
 ft_weights_xgb_reg
 
 
-# In[69]:
+# In[92]:
 
 
 transformed_df.head(5)
@@ -222,7 +228,7 @@ transformed_df.head(5)
 
 
 
-# In[70]:
+# In[93]:
 
 
 # Building the model
@@ -241,7 +247,7 @@ nn2.compile(loss='mean_squared_error',
 print(nn2.summary())
 
 
-# In[71]:
+# In[94]:
 
 
 # # Training the model
@@ -258,7 +264,7 @@ loaded_model = pickle.load(open('Airbnb_model.sav', 'rb'))
 xgb.__version__
 
 
-# In[72]:
+# In[95]:
 
 
 # def nn_model_evaluation(model, skip_epochs=0, X_train=X_train, X_test=X_test, y_train=y_train, y_test=y_test):
@@ -272,7 +278,7 @@ xgb.__version__
 #     print("Validation r2:", round(r2_score(y_test, y_test_pred),4))
 
 
-# In[73]:
+# In[96]:
 
 
 # nn_model_evaluation(nn2)
